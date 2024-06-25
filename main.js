@@ -1,16 +1,3 @@
-window.onload = function() {
-    const config = {
-        type: Phaser.AUTO,
-        width: 800,
-        height: 600,
-        scene: [BootScene, MineScene, ProcessScene, BuildScene, TowerScene],
-        parent: 'game-container',
-        backgroundColor: '#ffffff'
-    };
-
-    const game = new Phaser.Game(config);
-};
-
 class BootScene extends Phaser.Scene {
     constructor() {
         super('BootScene');
@@ -71,3 +58,15 @@ class TowerScene extends Phaser.Scene {
     }
 }
 
+window.onload = function() {
+    const config = {
+        type: Phaser.AUTO,
+        width: 800,
+        height: 600,
+        scene: [BootScene, MineScene, ProcessScene, BuildScene, TowerScene],
+        parent: 'game-container',
+        backgroundColor: '#ffffff'
+    };
+
+    const game = new Phaser.Game(config);
+};
