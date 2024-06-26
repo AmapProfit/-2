@@ -15,7 +15,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 100vh;
-    padding: 20px;
+    padding: 0; /* Убираем padding */
     box-sizing: border-box;
 }
 
@@ -23,21 +23,20 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 10px 0;
+    padding: 0; /* Убираем padding */
+    background-color: #f7f5f0;
 }
 
 .header {
     align-items: center;
-    background-color: #f7f5f0;
-    padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px 0; /* Добавляем padding здесь для разделения */
 }
 
 .footer {
     justify-content: center;
     position: fixed;
     bottom: 0;
-    width: 100%;
     background-color: #f7f5f0;
     padding: 20px 0;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
