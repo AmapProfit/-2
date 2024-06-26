@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'Ebrima Bold';
+    src: url('assets/ebrima_bold.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    font-family: 'Ebrima Bold', sans-serif;
+    background-color: #d3a673;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header, .footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header {
+    align-items: center;
+}
+
+.footer {
+    justify-content: space-around;
+}
+
+.icon, .footer-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+}
+
+.stat img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.energy {
+    display: flex;
+    align-items: center;
+}
+
+.energy img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#clay-count {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.clay-button {
+    width: 150px;
+    height: 150px;
+    background-color: #ffa500;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clay-button img {
+    width: 100px;
+    height: 100px;
+}

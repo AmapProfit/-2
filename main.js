@@ -1,72 +1,34 @@
-class BootScene extends Phaser.Scene {
-    constructor() {
-        super('BootScene');
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const clayButton = document.getElementById('clay-button');
+    const clayCount = document.getElementById('clay-count');
+    const bricksCount = document.getElementById('bricks-count');
+    const heightCount = document.getElementById('height-count');
+    const energyCount = document.getElementById('energy-count');
 
-    preload() {
-        this.load.image('towerBase', 'assets/towerBase.png');
-        this.load.image('mineButton', 'assets/mineButton.png');
-        this.load.image('processButton', 'assets/processButton.png');
-        this.load.image('buildButton', 'assets/buildButton.png');
-        this.load.image('clay', 'assets/clay.png');
-        this.load.image('brick', 'assets/brick.png');
-        this.load.image('energy', 'assets/energy.png');
-    }
+    let clay = 1034781;
+    let bricks = 54758;
+    let height = 183928;
+    let energy = 2324;
 
-    create() {
-        this.scene.start('MineScene');
-    }
-}
+    clayButton.addEventListener('click', () => {
+        clay++;
+        clayCount.textContent = clay.toLocaleString();
+    });
 
-class MineScene extends Phaser.Scene {
-    constructor() {
-        super('MineScene');
-    }
+    // Навигация по кнопкам внизу
+    document.getElementById('tower-icon').addEventListener('click', () => {
+        alert('Переход на экран с башней');
+    });
 
-    create() {
-        this.add.text(100, 100, 'Mine Scene', { fill: '#0f0' });
-    }
-}
+    document.getElementById('factory-icon').addEventListener('click', () => {
+        alert('Переход на экран с фабрикой');
+    });
 
-class ProcessScene extends Phaser.Scene {
-    constructor() {
-        super('ProcessScene');
-    }
+    document.getElementById('fire-icon').addEventListener('click', () => {
+        alert('Переход на экран с обжигом');
+    });
 
-    create() {
-        this.add.text(100, 100, 'Process Scene', { fill: '#0f0' });
-    }
-}
-
-class BuildScene extends Phaser.Scene {
-    constructor() {
-        super('BuildScene');
-    }
-
-    create() {
-        this.add.text(100, 100, 'Build Scene', { fill: '#0f0' });
-    }
-}
-
-class TowerScene extends Phaser.Scene {
-    constructor() {
-        super('TowerScene');
-    }
-
-    create() {
-        this.add.text(100, 100, 'Tower Scene', { fill: '#0f0' });
-    }
-}
-
-window.onload = function() {
-    const config = {
-        type: Phaser.AUTO,
-        width: 800,
-        height: 600,
-        scene: [BootScene, MineScene, ProcessScene, BuildScene, TowerScene],
-        parent: 'game-container',
-        backgroundColor: '#ffffff'
-    };
-
-    const game = new Phaser.Game(config);
-};
+    document.getElementById('friends-icon').addEventListener('click', () => {
+        alert('Переход на экран с рефералами');
+    });
+});

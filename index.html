@@ -3,12 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clay Tower Game</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.55.2/phaser.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <title>Amamasik Game</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div id="game-container"></div>
+    <div class="game-container">
+        <div class="header">
+            <img src="assets/tasks.png" alt="Tasks" class="icon" id="tasks-icon">
+            <div class="stats">
+                <div class="stat">
+                    <img src="assets/bricks.png" alt="Bricks">
+                    <span id="bricks-count">54 758</span>
+                </div>
+                <div class="stat">
+                    <img src="assets/height.png" alt="Height">
+                    <span id="height-count">183 928 m</span>
+                </div>
+            </div>
+            <div class="energy">
+                <img src="assets/energy.png" alt="Energy">
+                <span id="energy-count">2324/5000</span>
+            </div>
+        </div>
+        <div class="main">
+            <div id="clay-count">1 034 781</div>
+            <div class="clay-button">
+                <img src="assets/проект AMAP2.png" alt="Clay Button" id="clay-button">
+            </div>
+        </div>
+        <div class="footer">
+            <img src="assets/tower.png" alt="Tower" class="footer-icon" id="tower-icon">
+            <img src="assets/factory.png" alt="Factory" class="footer-icon" id="factory-icon">
+            <img src="assets/fire.png" alt="Fire" class="footer-icon" id="fire-icon">
+            <img src="assets/friends.png" alt="Friends" class="footer-icon" id="friends-icon">
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
