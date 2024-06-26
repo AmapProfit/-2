@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const heightCount = document.getElementById('height-count');
     const energyCount = document.getElementById('energy-count');
 
-    let clay = 1034781;
-    let bricks = 54758;
-    let height = 183928;
-    let energy = 2324;
+    let clay = 0;
+    let bricks = 0;
+    let height = 0;
+    let energy = 0;
 
     clayButton.addEventListener('click', () => {
         clay++;
