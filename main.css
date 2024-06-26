@@ -78,8 +78,8 @@ body {
 }
 
 .clay-button {
-    width: 150px;
-    height: 150px;
+    width: 317px;
+    height: 317px;
     background-color: #ffa500;
     border-radius: 50%;
     display: flex;
@@ -88,6 +88,6 @@ body {
 }
 
 .clay-button img {
-    width: 100px;
-    height: 100px;
+    width: 317px;
+    height: 317px;
 }
