@@ -1,34 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
     const clayButton = document.getElementById('clay-button');
-    const clayCount = document.getElementById('clay-count');
-    const bricksCount = document.getElementById('bricks-count');
-    const heightCount = document.getElementById('height-count');
-    const energyCount = document.getElementById('energy-count');
+    const clayCountDisplay = document.getElementById('clay-count');
+    const energyCountDisplay = document.getElementById('energy-count');
+    const energyBar = document.getElementById('energy-bar');
 
-    let clay = 0;
-    let bricks = 0;
-    let height = 0;
-    let energy = 0;
+    let clayCount = 0;
+    let energy = 5000;
+    const maxEnergy = 5000;
+    const energyPerClick = 20;
+    const energyRecoveryRate = 1;
+    const energyRecoveryInterval = 1000; // 1 second
 
     clayButton.addEventListener('click', () => {
-        clay++;
-        clayCount.textContent = clay.toLocaleString();
+        if (energy >= energyPerClick) {
+            clayCount++;
+            energy -= energyPerClick;
+            updateDisplays();
+        }
     });
 
-    // Навигация по кнопкам внизу
-    document.getElementById('tower-icon').addEventListener('click', () => {
-        alert('Переход на экран с башней');
-    });
+    function updateDisplays() {
+        clayCountDisplay.textContent = clayCount;
+        energyCountDisplay.textContent = `${energy}/${maxEnergy}`;
+        energyBar.style.width = `${(energy / maxEnergy) * 100}%`;
+    }
 
-    document.getElementById('factory-icon').addEventListener('click', () => {
-        alert('Переход на экран с фабрикой');
-    });
+    setInterval(() => {
+        if (energy < maxEnergy) {
+            energy += energyRecoveryRate;
+            if (energy > maxEnergy) {
+                energy = maxEnergy;
+            }
+            updateDisplays();
+        }
+    }, energyRecoveryInterval);
 
-    document.getElementById('fire-icon').addEventListener('click', () => {
-        alert('Переход на экран с обжигом');
-    });
-
-    document.getElementById('friends-icon').addEventListener('click', () => {
-        alert('Переход на экран с рефералами');
-    });
+    updateDisplays();
 });
