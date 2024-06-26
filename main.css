@@ -23,23 +23,31 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    padding: 10px 0;
 }
 
 .header {
     align-items: center;
+    background-color: #f7f5f0;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .footer {
-    justify-content: space-around;
-    margin-top: 10px;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f7f5f0;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
 }
 
-.icon, .footer-icon, .energy img {
+.icon, .footer-icon {
     width: 50px;
     height: 50px;
-    object-fit: contain; /* Добавлено для сохранения пропорций и полного вмещения изображений */
+    cursor: pointer;
 }
-
 
 .stats {
     display: flex;
@@ -61,7 +69,6 @@ body {
 .energy {
     display: flex;
     align-items: center;
-    margin-top: 10px;
 }
 
 .energy img {
@@ -74,6 +81,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1;
+    justify-content: center;
 }
 
 #clay-count {
@@ -82,16 +91,25 @@ body {
 }
 
 .clay-button {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     background-color: #ffa500;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .clay-button img {
-    width: 100%;
-    height: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.footer-icon {
+    transition: transform 0.3s ease;
+}
+
+.footer-icon:hover {
+    transform: scale(1.1);
 }
