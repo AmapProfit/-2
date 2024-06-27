@@ -6,7 +6,7 @@
 body {
     margin: 0;
     font-family: 'Ebrima Bold', sans-serif;
-    background-color: #e9d9b6; /* Светлый фон */
+    background-color: #d3a673;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,6 @@ body {
 }
 
 .game-container {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -24,7 +23,6 @@ body {
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
-    background-color: #e9d9b6; /* Светлый фон */
 }
 
 .header {
@@ -33,7 +31,7 @@ body {
     align-items: center;
     width: 100%;
     padding: 10px;
-    background-color: #e9d9b6; /* Светлый фон */
+    background-color: #d3a673;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -45,29 +43,14 @@ body {
 }
 
 .tasks span {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
-    margin-top: 5px;
 }
 
 .icon, .footer-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
-}
-
-.footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    padding: 20px 0;
-    background-color: #e9d9b6; /* Светлый фон */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
 }
 
 .footer-item {
@@ -93,18 +76,17 @@ body {
 .stat {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .stat img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
 }
 
 .stat span {
     font-weight: bold;
-    font-size: 16px;
 }
 
 .main {
@@ -113,25 +95,24 @@ body {
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    margin-bottom: 20px;
 }
 
 #clay-count {
-    font-size: 60px;
+    font-size: 48px;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .clay-button {
     width: 200px;
     height: 200px;
     background-color: #ffa500;
-    border-radius: 0;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .clay-button img {
@@ -140,21 +121,22 @@ body {
 }
 
 .energy-container {
-    position: absolute;
-    top: calc(100vh - 100px);
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     width: 100%;
     padding: 10px 20px;
-    background-color: #e9d9b6; /* Светлый фон */
+    background-color: #d3a673;
+    position: absolute;
+    top: calc(100% - 100px);
+    right: 0;
 }
 
 .energy-bar-container {
     width: 100%;
     background-color: #ccc;
     height: 20px;
-    border-radius: 0;
+    border-radius: 10px;
     overflow: hidden;
     margin: 10px 0;
 }
@@ -162,24 +144,38 @@ body {
 .energy-bar {
     height: 100%;
     background-color: #4caf50;
-    width: 0;
+    width: 100%;
     transition: width 0.5s ease;
 }
 
 .energy {
     display: flex;
     align-items: center;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .energy img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #d3a673;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
 }
 
 .footer-icon {
     transition: transform 0.3s ease;
+}
+
+.footer-icon:hover {
+    transform: scale(1.1);
 }
