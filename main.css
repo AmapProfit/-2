@@ -6,7 +6,7 @@
 body {
     margin: 0;
     font-family: 'Ebrima Bold', sans-serif;
-    background-color: #d3a673;
+    background-color: #e8c177;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@ body {
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
-    background-color: #f3e6d9; /* Чуть более светлый фон */
+    background-color: #e8c177; /* Чуть более светлый фон */
 }
 
 .header {
@@ -32,7 +32,7 @@ body {
     align-items: center;
     width: 100%;
     padding: 10px 20px; /* Увеличил отступы */
-    background-color: #d3a673;
+    background-color: #e8c177;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -110,7 +110,7 @@ body {
 .clay-button {
     width: 220px; /* Увеличил размер кнопки */
     height: 220px; /* Увеличил размер кнопки */
-    background-color: #ffa500;
+    background-color: #e8c177;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -130,7 +130,7 @@ body {
     align-items: flex-end;
     width: 100%;
     padding: 10px 20px;
-    background-color: #f3e6d9; /* Чуть более светлый фон */
+    background-color: #e8c177; /* Чуть более светлый фон */
     position: absolute;
     top: 160px; /* Опустил контейнер с энергией ниже */
     right: 0;
