@@ -141,7 +141,7 @@ body {
 .energy-bar-container {
     width: 100%;
     background-color: #ccc;
-    height: 20px;
+    height: 0px;
     border-radius: 10px;
     overflow: hidden;
     margin: 10px 0;
