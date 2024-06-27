@@ -121,7 +121,7 @@ body {
 
 .clay-button img {
     width: 160px; /* Увеличил размер иконки кнопки */
-    height: 160px; /* Увеличил размер иконки кнопки */
+    height: 200px; /* Увеличил размер иконки кнопки */
 }
 
 .energy-container {
@@ -141,7 +141,7 @@ body {
 .energy-bar-container {
     width: 100%;
     background-color: #ccc;
-    height: 0px;
+    height: -200px;
     border-radius: 10px;
     overflow: hidden;
     margin: 10px 0;
