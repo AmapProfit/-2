@@ -1,40 +1,29 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const clayButton = document.getElementById('clay-button');
-    const clayCountDisplay = document.getElementById('clay-count');
-    const energyCountDisplay = document.getElementById('energy-count');
-    const energyBar = document.getElementById('energy-bar');
+let clay = 0;
+let bricks = 0;
+let height = 0;
+let energy = 5000;
 
-    let clayCount = 0;
-    let energy = 5000;
-    const maxEnergy = 5000;
-    const energyPerClick = 20;
-    const energyRecoveryRate = 1;
-    const energyRecoveryInterval = 1000; // 1 second
+const shelfButton = document.getElementById('shelfButton');
+const energyBar = document.getElementById('energyBar');
+const energyText = document.getElementById('energy');
 
-    clayButton.addEventListener('click', () => {
-        if (energy >= energyPerClick) {
-            clayCount++;
-            energy -= energyPerClick;
-            updateDisplays();
-        }
-    });
-
-    function updateDisplays() {
-        clayCountDisplay.textContent = clayCount;
-        energyCountDisplay.textContent = `${energy}/${maxEnergy}`;
-        energyBar.style.width = `${(energy / maxEnergy) * 100}%`;
+shelfButton.addEventListener('click', () => {
+    if (energy >= 20) {
+        clay += 1;
+        energy -= 20;
+        document.getElementById('clay').innerText = `Clay: ${clay}`;
+        updateEnergy();
     }
-
-    setInterval(() => {
-        if (energy < maxEnergy) {
-            energy += energyRecoveryRate;
-            if (energy > maxEnergy) {
-                energy = maxEnergy;
-            }
-            updateDisplays();
-        }
-    }, energyRecoveryInterval);
-
-    updateDisplays();
 });
 
+function updateEnergy() {
+    energyText.innerText = `Energy: ${energy}`;
+    energyBar.style.width = `${(energy / 5000) * 100}%`;
+}
+
+setInterval(() => {
+    if (energy < 5000) {
+        energy += 1;
+        updateEnergy();
+    }
+}, 1000);
