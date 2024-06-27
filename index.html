@@ -3,40 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amamasik Game</title>
     <link rel="stylesheet" href="main.css">
-    <title>Clay Collection Game</title>
 </head>
 <body>
-    <div id="gameContainer">
-        <div id="resources">
-            <p id="clay">Clay: 0</p>
-            <p id="bricks">Bricks: 0</p>
-            <p id="height">Height: 0</p>
-            <button id="tasksButton">Tasks</button>
-        </div>
-        <button id="shelfButton">Click to get clay</button>
-        <div id="energyContainer">
-            <p id="energy">Energy: 5000</p>
-            <div id="energyBarContainer">
-                <div id="energyBar"></div>
+    <div class="game-container">
+        <div class="header">
+            <div class="tasks">
+                <img src="assets/tasks.png" alt="Tasks" class="icon" id="tasks-icon">
+                <span>Tasks</span>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <img src="assets/bricks.png" alt="Bricks">
+                    <span id="bricks-count">0</span>
+                </div>
+                <div class="stat">
+                    <img src="assets/height.png" alt="Height">
+                    <span id="height-count">0 m</span>
+                </div>
             </div>
         </div>
-        <div id="bottomButtons">
-            <div class="bottomButton" id="towerButton">
-                <img src="tower.png" alt="Tower">
-                <p>Tower</p>
+        <div class="main">
+            <div id="clay-count">0</div>
+            <div class="clay-button">
+                <img src="assets/clay_button.png" alt="Clay Button" id="clay-button">
             </div>
-            <div class="bottomButton" id="factoryButton">
-                <img src="bricks.png" alt="Factory">
-                <p>Factory</p>
+        </div>
+        <div class="energy-container">
+            <div class="energy">
+                <img src="assets/energy.png" alt="Energy">
+                <span id="energy-count">5000/5000</span>
             </div>
-            <div class="bottomButton" id="fireButton">
-                <img src="fire.png" alt="Boosts">
-                <p>Boosts</p>
+            <div class="energy-bar-container">
+                <div class="energy-bar" id="energy-bar"></div>
             </div>
-            <div class="bottomButton" id="friendsButton">
-                <img src="friends.png" alt="Friends">
-                <p>Friends</p>
+        </div>
+        <div class="footer">
+            <div class="footer-item">
+                <img src="assets/tower.png" alt="Tower" class="footer-icon" id="tower-icon">
+                <span>Tower</span>
+            </div>
+            <div class="footer-item">
+                <img src="assets/factory.png" alt="Factory" class="footer-icon" id="factory-icon">
+                <span>Factory</span>
+            </div>
+            <div class="footer-item">
+                <img src="assets/fire.png" alt="Fire" class="footer-icon" id="fire-icon">
+                <span>Boosts</span>
+            </div>
+            <div class="footer-item">
+                <img src="assets/friends.png" alt="Friends" class="footer-icon" id="friends-icon">
+                <span>Friends</span>
             </div>
         </div>
     </div>
