@@ -132,7 +132,7 @@ body {
     padding: 10px 20px;
     background-color: #e8c177; /* Чуть более светлый фон */
     position: absolute;
-    top: 100px; /* Опустил контейнер с энергией ниже */
+    top: 50px; /* Опустил контейнер с энергией ниже */
     right: 0;
     z-index: 1; /* Установил z-index для размещения над остальным содержимым */
 
@@ -174,7 +174,7 @@ body {
     align-items: center;
     width: 100%;
     padding: 10px 0;
-    background-color: #d3a673;
+    background-color: #e8c177;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
