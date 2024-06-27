@@ -133,8 +133,11 @@ body {
     margin-right: 10px;
 }
 
+.game-container {
+    position: relative; /* Добавляем относительное позиционирование */
+}
+
 .footer {
-    .footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -142,10 +145,10 @@ body {
     padding: 20px 0;
     background-color: #e0cda5;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    position: fixed; /* Используем фиксированную позицию */
-    bottom: 0; /* Помещаем вниз страницы */
-    left: 0; /* Выравниваем по левому краю */
-    z-index: 1; /* Устанавливаем z-index, чтобы кнопки были над остальным контентом */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
 }
 
 
