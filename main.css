@@ -23,6 +23,7 @@ body {
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
+    background-color: #f3e6d9; /* Чуть более светлый фон */
 }
 
 .header {
@@ -30,9 +31,9 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px;
+    padding: 10px 20px; /* Увеличил отступы */
     background-color: #d3a673;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .tasks {
@@ -43,13 +44,15 @@ body {
 }
 
 .tasks span {
-    font-size: 14px;
+    font-size: 16px; /* Увеличил размер шрифта */
     font-weight: bold;
+    margin-top: 5px; /* Добавил отступ сверху */
 }
 
-.icon, .footer-icon {
-    width: 50px;
-    height: 50px;
+.icon,
+.footer-icon {
+    width: 60px; /* Увеличил размер иконок */
+    height: 60px; /* Увеличил размер иконок */
     cursor: pointer;
 }
 
@@ -62,7 +65,7 @@ body {
 
 .footer-item span {
     margin-top: 5px;
-    font-size: 14px;
+    font-size: 16px; /* Увеличил размер шрифта */
     font-weight: bold;
 }
 
@@ -76,17 +79,18 @@ body {
 .stat {
     display: flex;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 10px; /* Увеличил отступ между статами */
 }
 
 .stat img {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+    width: 24px; /* Увеличил размер иконок статов */
+    height: 24px; /* Увеличил размер иконок статов */
+    margin-right: 10px; /* Увеличил отступ между иконкой и текстом */
 }
 
 .stat span {
     font-weight: bold;
+    font-size: 16px; /* Увеличил размер шрифта */
 }
 
 .main {
@@ -98,26 +102,26 @@ body {
 }
 
 #clay-count {
-    font-size: 48px;
+    font-size: 60px; /* Увеличил размер шрифта */
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .clay-button {
-    width: 200px;
-    height: 200px;
+    width: 220px; /* Увеличил размер кнопки */
+    height: 220px; /* Увеличил размер кнопки */
     background-color: #ffa500;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Увеличил отступ снизу кнопки */
 }
 
 .clay-button img {
-    width: 150px;
-    height: 150px;
+    width: 160px; /* Увеличил размер иконки кнопки */
+    height: 160px; /* Увеличил размер иконки кнопки */
 }
 
 .energy-container {
@@ -126,10 +130,11 @@ body {
     align-items: flex-end;
     width: 100%;
     padding: 10px 20px;
-    background-color: #d3a673;
+    background-color: #f3e6d9; /* Чуть более светлый фон */
     position: absolute;
-    top: calc(100% - 100px);
+    top: 0; /* Разместил контейнер энергии вверху */
     right: 0;
+    z-index: 1; /* Установил z-index для размещения над остальным содержимым */
 }
 
 .energy-bar-container {
@@ -157,9 +162,9 @@ body {
 }
 
 .energy img {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+    width: 24px; /* Увеличил размер иконки энергии */
+    height: 24px; /* Увеличил размер иконки энергии */
+    margin-right: 10px; /* Увеличил отступ между иконкой и текстом */
 }
 
 .footer {
@@ -169,7 +174,7 @@ body {
     width: 100%;
     padding: 10px 0;
     background-color: #d3a673;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .footer-icon {
