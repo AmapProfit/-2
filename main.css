@@ -134,13 +134,21 @@ body {
 }
 
 .footer {
+    .footer {
     display: flex;
-    justify-content: space-around; /* Равномерное распределение кнопок внизу */
+    justify-content: space-around;
     align-items: center;
     width: 100%;
-    padding: 20px 0; /* Увеличение внутренних отступов */
-    background-color: #e0cda5; /* Чуть более светлый фон для нижней панели */
+    padding: 20px 0;
+    background-color: #e0cda5;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    position: fixed; /* Используем фиксированную позицию */
+    bottom: 0; /* Помещаем вниз страницы */
+    left: 0; /* Выравниваем по левому краю */
+    z-index: 1; /* Устанавливаем z-index, чтобы кнопки были над остальным контентом */
+}
+
+
 }
 
 .footer-item {
