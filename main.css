@@ -6,7 +6,7 @@
 body {
     margin: 0;
     font-family: 'Ebrima Bold', sans-serif;
-    background-color: #e9d9b6; /* Светлее фон */
+    background-color: #e9d9b6; /* Светлый фон */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,7 @@ body {
 }
 
 .game-container {
-    position: relative; /* Относительное позиционирование для вложенных элементов */
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -24,6 +24,7 @@ body {
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
+    background-color: #e9d9b6; /* Светлый фон */
 }
 
 .header {
@@ -32,7 +33,7 @@ body {
     align-items: center;
     width: 100%;
     padding: 10px;
-    background-color: #e9d9b6; /* Цвет фона */
+    background-color: #e9d9b6; /* Светлый фон */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -44,15 +45,29 @@ body {
 }
 
 .tasks span {
-    font-size: 18px; /* Увеличиваем размер текста */
+    font-size: 18px;
     font-weight: bold;
-    margin-top: 5px; /* Увеличиваем отступ сверху */
+    margin-top: 5px;
 }
 
 .icon, .footer-icon {
-    width: 60px; /* Увеличиваем размер иконок */
+    width: 60px;
     height: 60px;
     cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    background-color: #e9d9b6; /* Светлый фон */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .footer-item {
@@ -78,18 +93,18 @@ body {
 .stat {
     display: flex;
     align-items: center;
-    margin-bottom: 10px; /* Увеличиваем отступ между статами */
+    margin-bottom: 10px;
 }
 
 .stat img {
-    width: 30px; /* Увеличиваем размер иконок статов */
+    width: 30px;
     height: 30px;
-    margin-right: 10px; /* Увеличиваем отступ справа */
+    margin-right: 10px;
 }
 
 .stat span {
     font-weight: bold;
-    font-size: 16px; /* Увеличиваем размер текста */
+    font-size: 16px;
 }
 
 .main {
@@ -98,25 +113,25 @@ body {
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    margin-bottom: 20px; /* Увеличиваем отступ снизу */
+    margin-bottom: 20px;
 }
 
 #clay-count {
-    font-size: 60px; /* Увеличиваем размер счетчика */
+    font-size: 60px;
     font-weight: bold;
-    margin-bottom: 30px; /* Увеличиваем отступ снизу */
+    margin-bottom: 30px;
 }
 
 .clay-button {
     width: 200px;
     height: 200px;
     background-color: #ffa500;
-    border-radius: 0; /* Убираем скругление кнопки */
+    border-radius: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin-bottom: 20px; /* Увеличиваем отступ снизу */
+    margin-bottom: 20px;
 }
 
 .clay-button img {
@@ -126,13 +141,13 @@ body {
 
 .energy-container {
     position: absolute;
-    top: calc(100vh - 150px); /* Позиционируем контейнер с энергией внизу */
+    top: calc(100vh - 100px);
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     width: 100%;
     padding: 10px 20px;
-    background-color: #e9d9b6; /* Цвет фона */
+    background-color: #e9d9b6; /* Светлый фон */
 }
 
 .energy-bar-container {
@@ -147,45 +162,24 @@ body {
 .energy-bar {
     height: 100%;
     background-color: #4caf50;
-    width: 0; /* Изначально ширина полосы энергии 0 */
+    width: 0;
     transition: width 0.5s ease;
 }
 
 .energy {
     display: flex;
     align-items: center;
-    font-size: 24px; /* Увеличиваем размер текста */
+    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 20px; /* Увеличиваем отступ снизу */
+    margin-bottom: 20px;
 }
 
 .energy img {
-    width: 30px; /* Увеличиваем размер иконок */
+    width: 30px;
     height: 30px;
-    margin-right: 10px; /* Увеличиваем отступ справа */
-}
-
-.footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    padding: 20px 0;
-    background-color: #e9d9b6; /* Цвет фона */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
+    margin-right: 10px;
 }
 
 .footer-icon {
     transition: transform 0.3s ease;
-    width: 60px; /* Увеличиваем размер иконок */
-    height: 60px;
 }
-
-.footer-icon:hover {
-    transform: scale(1.1);
-}
-
