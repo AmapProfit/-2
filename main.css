@@ -128,7 +128,7 @@ body {
     padding: 10px 20px;
     background-color: #d3a673;
     position: absolute;
-    top: calc(100% - 100px);
+    bottom: 150px;
     right: 0;
 }
 
@@ -170,6 +170,8 @@ body {
     padding: 10px 0;
     background-color: #d3a673;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    position: absolute;
+    bottom: 0;
 }
 
 .footer-icon {
