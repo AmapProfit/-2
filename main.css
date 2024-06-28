@@ -108,17 +108,22 @@ body {
 .clay-button {
     width: 200px;
     height: 200px;
-    background-color: #ffa500;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     margin-bottom: 10px;
+    background: none; /* Убираем фон */
+    border: none; /* Убираем границу */
+    border-radius: 50%; /* Круглая кнопка */
+    box-shadow: none; /* Убираем тень */
+    outline: none; /* Убираем обводку при фокусе */
+    cursor: pointer; /* Указатель мыши */
 }
 
 .clay-button img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Круглая картинка */
 }
 
 .energy-container {
@@ -129,7 +134,7 @@ body {
     padding: 10px 20px;
     background-color: #e8c177; /* Чуть более светлый фон */
     position: absolute;
-    top: calc(100% - 150px); /* Опущен контейнер с энергией ниже */
+    top: calc(100% - 200px); /* Поднял контейнер с энергией чуть выше */
     right: 0;
     z-index: 1; /* Установлен z-index для размещения над остальным содержимым */
 }
@@ -173,7 +178,7 @@ body {
     background-color: #e8c177;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
     position: absolute; /* Добавлено для размещения кнопок внизу */
-    bottom: 0; /* Добавлено для размещения кнопок внизу */
+    bottom: 50px; /* Поднял кнопки чуть выше */
 }
 
 .footer-icon {
