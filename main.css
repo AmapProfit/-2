@@ -102,7 +102,7 @@ body {
 #clay-count {
     font-size: 48px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 250px;
 }
 
 .clay-button {
@@ -118,12 +118,12 @@ body {
     box-shadow: none; /* Убираем тень */
     outline: none; /* Убираем обводку при фокусе */
     cursor: pointer; /* Указатель мыши */
-    margin-top: 50px; /* Поднял кнопку глины выше */
+    margin-top: -200px; /* Поднял кнопку глины выше */
 }
 
 .clay-button img {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%; /* Круглая картинка */
 }
 
@@ -135,7 +135,7 @@ body {
     padding: 10px 20px;
     background-color: #e8c177; /* Чуть более светлый фон */
     position: absolute;
-    top: calc(100% - 200px); /* Поднял контейнер с энергией чуть выше */
+    top: calc(100% - 230px); /* Поднял контейнер с энергией чуть выше */
     right: 0;
     z-index: 1; /* Установлен z-index для размещения над остальным содержимым */
 }
