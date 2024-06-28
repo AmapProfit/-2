@@ -39,16 +39,21 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 .tasks span {
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
     margin-left: 10px;
 }
 
-.icon, .footer-icon {
+.icon {
+    width: 60px;
+    height: 50px;
+    cursor: pointer;
+}
+.footer-icon {
     width: 50px;
     height: 50px;
     cursor: pointer;
@@ -89,6 +94,7 @@ body {
 .stat span {
     font-weight: bold;
     font-size: 20px;
+    margin-right: 60px;
 }
 
 .main {
@@ -102,11 +108,11 @@ body {
 #clay-count {
     font-size: 48px;
     font-weight: bold;
-    margin-bottom: 50px; /* Отступ снизу */
-    position: absolute; /* Абсолютное позиционирование */
-    top: 150px; /* Отступ сверху */
-    left: 50%; /* Центрирование по горизонтали */
-    transform: translateX(-50%); /* Центрирование по горизонтали */
+    margin-bottom: 50px;
+    position: absolute;
+    top: 135px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .clay-button {
@@ -122,10 +128,10 @@ body {
     box-shadow: none;
     outline: none;
     cursor: pointer;
-    position: absolute; /* Абсолютное позиционирование */
-    top: 250px; /* Отступ сверху */
-    left: 50%; /* Центрирование по горизонтали */
-    transform: translateX(-50%); /* Центрирование по горизонтали */
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .clay-button img {
@@ -138,7 +144,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 100%;
+    width: 80%; /* Уменьшил ширину контейнера для энергии */
     padding: 10px 20px;
     background-color: #e8c177;
     position: absolute;
@@ -150,7 +156,7 @@ body {
 .energy-bar-container {
     width: 100%;
     background-color: #ccc;
-    height: 17px;
+    height: 15px;
     border-radius: 20px;
     overflow: hidden;
     margin: -5px 0;
@@ -197,9 +203,20 @@ body {
     transform: scale(1.1);
 }
 
+/* Добавляем airdrop кнопку */
+.footer .footer-item:nth-child(5) {
+    margin-left: 10x; /* Дополнительный отступ слева для последней кнопки */
+}
+
 .clay-button:active,
 .clay-button:focus,
 .footer-icon:active,
 .footer-icon:focus {
     outline: none;
+}
+
+/* Убираем синий контур при нажатии на изображения */
+img:active, img:focus {
+    outline: none;
+    border: none;
 }
