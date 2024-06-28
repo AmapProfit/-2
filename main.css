@@ -37,7 +37,7 @@ body {
 
 .tasks {
     display: flex;
-    flex-direction: row; /* Изменено с column на row */
+    flex-direction: row;
     align-items: center;
     margin-left: 20px;
 }
@@ -45,7 +45,7 @@ body {
 .tasks span {
     font-size: 14px;
     font-weight: bold;
-    margin-left: 10px; /* Добавлено для размещения текста справа от иконки */
+    margin-left: 10px;
 }
 
 .icon, .footer-icon {
@@ -81,14 +81,14 @@ body {
 }
 
 .stat img {
-    width: 30px; /* Увеличено с 20px */
-    height: 30px; /* Увеличено с 20px */
-    margin-right: 10px; /* Увеличено с 5px */
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
 
 .stat span {
     font-weight: bold;
-    font-size: 20px; /* Увеличен размер шрифта */
+    font-size: 20px;
 }
 
 .main {
@@ -102,7 +102,11 @@ body {
 #clay-count {
     font-size: 48px;
     font-weight: bold;
-    margin-bottom: 250px;
+    margin-bottom: 50px; /* Отступ снизу */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 100px; /* Отступ сверху */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%); /* Центрирование по горизонтали */
 }
 
 .clay-button {
@@ -112,19 +116,22 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
-    background: none; /* Убираем фон */
-    border: none; /* Убираем границу */
-    border-radius: 50%; /* Круглая кнопка */
-    box-shadow: none; /* Убираем тень */
-    outline: none; /* Убираем обводку при фокусе */
-    cursor: pointer; /* Указатель мыши */
-    margin-top: -200px; /* Поднял кнопку глины выше */
+    background: none;
+    border: none;
+    border-radius: 50%;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute; /* Абсолютное позиционирование */
+    top: 175px; /* Отступ сверху */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%); /* Центрирование по горизонтали */
 }
 
 .clay-button img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%; /* Круглая картинка */
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
 }
 
 .energy-container {
@@ -133,20 +140,20 @@ body {
     align-items: flex-end;
     width: 100%;
     padding: 10px 20px;
-    background-color: #e8c177; /* Чуть более светлый фон */
+    background-color: #e8c177;
     position: absolute;
-    top: calc(100% - 230px); /* Поднял контейнер с энергией чуть выше */
+    top: calc(100% - 200px);
     right: 0;
-    z-index: 1; /* Установлен z-index для размещения над остальным содержимым */
+    z-index: 1;
 }
 
 .energy-bar-container {
     width: 100%;
     background-color: #ccc;
-    height: 20px;
-    border-radius: 10px;
+    height: 17px;
+    border-radius: 20px;
     overflow: hidden;
-    margin: 10px 0;
+    margin: -5px 0;
 }
 
 .energy-bar {
@@ -178,8 +185,8 @@ body {
     padding: 10px 0;
     background-color: #e8c177;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    position: absolute; /* Добавлено для размещения кнопок внизу */
-    bottom: 50px; /* Поднял кнопки чуть выше */
+    position: absolute;
+    bottom: 50px;
 }
 
 .footer-icon {
