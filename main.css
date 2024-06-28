@@ -104,7 +104,7 @@ body {
     font-weight: bold;
     margin-bottom: 50px; /* Отступ снизу */
     position: absolute; /* Абсолютное позиционирование */
-    top: 100px; /* Отступ сверху */
+    top: 150px; /* Отступ сверху */
     left: 50%; /* Центрирование по горизонтали */
     transform: translateX(-50%); /* Центрирование по горизонтали */
 }
@@ -123,14 +123,14 @@ body {
     outline: none;
     cursor: pointer;
     position: absolute; /* Абсолютное позиционирование */
-    top: 175px; /* Отступ сверху */
+    top: 250px; /* Отступ сверху */
     left: 50%; /* Центрирование по горизонтали */
     transform: translateX(-50%); /* Центрирование по горизонтали */
 }
 
 .clay-button img {
-    width: 225px;
-    height: 225px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
 }
 
@@ -195,4 +195,11 @@ body {
 
 .footer-icon:hover {
     transform: scale(1.1);
+}
+
+.clay-button:active,
+.clay-button:focus,
+.footer-icon:active,
+.footer-icon:focus {
+    outline: none;
 }
