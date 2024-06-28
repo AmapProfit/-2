@@ -6,7 +6,7 @@
 body {
     margin: 0;
     font-family: 'Ebrima Bold', sans-serif;
-    background-color: #e8c177;
+    background-color: #d3a673;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,6 @@ body {
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
-    background-color: #e8c177; /* Чуть более светлый фон */
 }
 
 .header {
@@ -31,28 +30,27 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px 20px; /* Увеличил отступы */
-    background-color: #e8c177;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background-color: #d3a673;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .tasks {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Изменено с column на row */
     align-items: center;
     margin-left: 20px;
 }
 
 .tasks span {
-    font-size: 16px; /* Увеличил размер шрифта */
+    font-size: 14px;
     font-weight: bold;
-    margin-top: 5px; /* Добавил отступ сверху */
+    margin-left: 10px; /* Добавлено для размещения текста справа от иконки */
 }
 
-.icon,
-.footer-icon {
-    width: 60px; /* Увеличил размер иконок */
-    height: 60px; /* Увеличил размер иконок */
+.icon, .footer-icon {
+    width: 50px;
+    height: 50px;
     cursor: pointer;
 }
 
@@ -60,12 +58,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px 10px; /* Увеличил отступы */
+    margin: 0 10px;
 }
 
 .footer-item span {
     margin-top: 5px;
-    font-size: 16px; /* Увеличил размер шрифта */
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -79,18 +77,18 @@ body {
 .stat {
     display: flex;
     align-items: center;
-    margin-bottom: 10px; /* Увеличил отступ между статами */
+    margin-bottom: 5px;
 }
 
 .stat img {
-    width: 24px; /* Увеличил размер иконок статов */
-    height: 24px; /* Увеличил размер иконок статов */
-    margin-right: 10px; /* Увеличил отступ между иконкой и текстом */
+    width: 30px; /* Увеличено с 20px */
+    height: 30px; /* Увеличено с 20px */
+    margin-right: 10px; /* Увеличено с 5px */
 }
 
 .stat span {
     font-weight: bold;
-    font-size: 16px; /* Увеличил размер шрифта */
+    font-size: 20px; /* Увеличен размер шрифта */
 }
 
 .main {
@@ -102,26 +100,25 @@ body {
 }
 
 #clay-count {
-    font-size: 60px; /* Увеличил размер шрифта */
+    font-size: 48px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .clay-button {
-    width: 160px; /* Увеличил размер кнопки */
-    height: 160px; /* Увеличил размер кнопки */
-    background-color: #e8c177;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: #ffa500;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Увеличил отступ снизу кнопки */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
 }
 
 .clay-button img {
-    width: 160px; /* Увеличил размер иконки кнопки */
-    height: 200px; /* Увеличил размер иконки кнопки */
+    width: 150px;
+    height: 150px;
 }
 
 .energy-container {
@@ -132,16 +129,15 @@ body {
     padding: 10px 20px;
     background-color: #e8c177; /* Чуть более светлый фон */
     position: absolute;
-    top: 300px; /* Опустил контейнер с энергией ниже */
+    top: calc(100% - 200px); /* Опущен контейнер с энергией ниже */
     right: 0;
-    z-index: 1; /* Установил z-index для размещения над остальным содержимым */
-
+    z-index: 1; /* Установлен z-index для размещения над остальным содержимым */
 }
 
 .energy-bar-container {
     width: 100%;
     background-color: #ccc;
-    height: 0px;
+    height: 20px;
     border-radius: 10px;
     overflow: hidden;
     margin: 10px 0;
@@ -163,9 +159,9 @@ body {
 }
 
 .energy img {
-    width: 24px; /* Увеличил размер иконки энергии */
-    height: 24px; /* Увеличил размер иконки энергии */
-    margin-right: 10px; /* Увеличил отступ между иконкой и текстом */
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
 }
 
 .footer {
@@ -174,8 +170,10 @@ body {
     align-items: center;
     width: 100%;
     padding: 10px 0;
-    background-color: #e8c177;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #d3a673;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    position: absolute; /* Добавлено для размещения кнопок внизу */
+    bottom: 0; /* Добавлено для размещения кнопок внизу */
 }
 
 .footer-icon {
