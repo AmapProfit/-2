@@ -12,6 +12,7 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    user-select: none;
 }
 
 .game-container {
@@ -110,7 +111,7 @@ body {
     font-weight: bold;
     margin-top: 50px;
     position: absolute;
-    bottom: 500px;
+    bottom: 490px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -144,7 +145,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 80%; /* Уменьшил ширину контейнера для энергии */
+    width: 90%; /* Уменьшил ширину контейнера для энергии */
     padding: 10px 20px;
     background-color: #e8c177;
     position: absolute;
@@ -207,6 +208,88 @@ body {
 .footer .footer-item:nth-child(5) {
     margin-left: 10x; /* Дополнительный отступ слева для последней кнопки */
 }
+
+.boosts-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+    z-index: 1000;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+
+.back-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+/* Для плавного отображения меню можно использовать transition */
+.boosts-menu.show {
+    display: flex;
+}
+
+/* Общие стили для всех меню */
+.menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.back-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+}
+
+/* Для плавного отображения меню можно использовать transition */
+.menu.show {
+    display: flex;
+}
+
+/* Индивидуальные стили для каждого меню */
+.boosts-menu {
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный красный фон */
+}
+
+.friends-menu {
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный зеленый фон */
+}
+
+.airdrop-menu {
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный синий фон */
+}
+
+/* Индивидуальные стили для кнопок back в каждом меню */
+.boosts-menu .back-icon {
+    top: 10px;
+    left: 10px;
+}
+
+.friends-menu .back-icon {
+    top: 10px;
+    left: 10px;
+}
+
+.airdrop-menu .back-icon {
+    top: 10px;
+    left: 10px;
+}
+
 
 .clay-button:active,
 .clay-button:focus,
