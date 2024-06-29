@@ -110,7 +110,7 @@ body {
     font-weight: bold;
     margin-top: 50px;
     position: absolute;
-    bottom: 700px;
+    bottom: 500px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -129,7 +129,7 @@ body {
     outline: none;
     cursor: pointer;
     position: absolute;
-    bottom: 550px;
+    bottom: 240px;
     left: 50%;
     transform: translateX(-50%);
 }
