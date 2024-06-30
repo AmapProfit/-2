@@ -64,15 +64,36 @@
     </div>
     <div class="boosts-menu menu" id="boosts-menu">
         <img src="assets/back.png" alt="Back" class="back-icon" id="back-icon-boosts">
-        <!-- Здесь можно добавить контент меню Boosts -->
+        <h2>Your balance</h2>
+        <div id="balance">0</div>
+        <h3>Daily boosters:</h3>
+        <div class="boost-buttons">
+            <div class="boost-option" id="daily-boost-fire">
+                <img src="assets/daily_boost_fire.png" alt="Daily Boost Fire">
+                <span id="fire-boost-count">3/3</span>
+            </div>
+            <div class="boost-option" id="daily-boost-energy">
+                <img src="assets/daily_boost_energy.png" alt="Daily Boost Energy">
+                <span id="energy-boost-count">3/3</span>
+            </div>
+        </div>
+        <h3>Boosters</h3>
+        <button class="boost-option" id="boost-button">
+            <span>Upgrade</span>
+            <span id="boost-cost">100</span>
+        </button>
+        <div>Level: <span id="boost-level">0</span></div>
+        <button class="boost-option" id="energy-boost-button">
+            <span>Upgrade Energy</span>
+            <span id="energy-boost-cost">100</span>
+        </button>
+        <div>Level: <span id="energy-boost-level">0</span></div>
     </div>
     <div class="friends-menu menu" id="friends-menu">
         <img src="assets/back.png" alt="Back" class="back-icon" id="back-icon-friends">
-        <!-- Здесь можно добавить контент меню Friends -->
     </div>
     <div class="airdrop-menu menu" id="airdrop-menu">
         <img src="assets/back.png" alt="Back" class="back-icon" id="back-icon-airdrop">
-        <!-- Здесь можно добавить контент меню Airdrop -->
     </div>
     <script src="main.js"></script>
 </body>
