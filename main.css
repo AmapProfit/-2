@@ -376,3 +376,125 @@ body {
     font-weight: bold;
 }
 
+.factory-menu.show {
+    display: flex;
+}
+
+.factory-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.factory-menu .back-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.factory-menu h2 {
+    color: #fff;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.factory-stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+}
+
+.factory-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    background-color: #e8c177;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.factory-button img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Tower menu styles */
+.tower-menu.show {
+    display: flex;
+}
+
+.tower-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.tower-menu .back-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.tower-menu h2 {
+    color: #fff;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.tower-stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+}
+
+.tower-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    background-color: #e8c177;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.tower-button img {
+    width: 100%;
+    height: 100%;
+}
