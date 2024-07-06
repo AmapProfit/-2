@@ -41,27 +41,28 @@
         </div>
         <div class="footer">
             <div class="footer-item">
-                <img class="footer-icon" src="assets/tower.png" alt="icon1">
+                <img class="footer-icon" src="assets/tower.png" alt="Tower" id="tower-icon">
                 <span>Tower</span>
             </div>
             <div class="footer-item">
-                <img class="footer-icon" src="assets/factory.png" alt="icon2">
+                <img class="footer-icon" src="assets/factory.png" alt="Factory" id="factory-icon">
                 <span>Factory</span>
             </div>
             <div class="footer-item">
-                <img class="footer-icon" src="assets/fire.png" alt="icon3" id="boosts-icon">
+                <img class="footer-icon" src="assets/fire.png" alt="Boosts" id="boosts-icon">
                 <span>Boosts</span>
             </div>
             <div class="footer-item">
-                <img class="footer-icon" src="assets/friends1.png" alt="icon4" id="friends-icon">
+                <img class="footer-icon" src="assets/friends1.png" alt="Friends" id="friends-icon">
                 <span>Friends</span>
             </div>
             <div class="footer-item">
-                <img class="footer-icon" src="assets/shipping.png" alt="airdrop" id="airdrop-icon">
+                <img class="footer-icon" src="assets/shipping.png" alt="Airdrop" id="airdrop-icon">
                 <span>Airdrop</span>
             </div>
         </div>
     </div>
+
     <div class="boosts-menu menu" id="boosts-menu">
         <img src="assets/back.png" alt="Back" class="back-icon" id="back-icon-boosts">
         <h2>Your balance</h2>
@@ -89,19 +90,37 @@
         </button>
         <div>Level: <span id="energy-boost-level">0</span></div>
     </div>
+
     <div class="friends-menu menu" id="friends-menu">
         <img src="assets/back.png" alt="Back" class="back-icon" id="back-icon-friends">
     </div>
+
     <div class="airdrop-menu menu" id="airdrop-menu">
         <img src="assets/back.png" alt="Back" class="back-icon" id="back-icon-airdrop">
     </div>
+    
     <div class="factory-menu menu" id="factory-menu">
-    <img src="assets/back.png" alt="Back" class="back-icon" id="back-icon-factory">
-    <h2>Baking Clay</h2>
-    <button class="factory-button" id="factory-button">
-        <img src="assets/factory_button.png" alt="Factory Button">
-    </button>
-    <p>1 clay - 50 bricks</p>
+        <img src="assets/back.png" alt="Back" class="back-icon" id="back-icon-factory">
+        <h2>Factory</h2>
+        <div class="factory-stats">
+            <div id="current-clay">Clay: 0</div>
+            <div id="current-bricks">Bricks: 0</div>
+        </div>
+        <button class="factory-button" id="factory-button">
+            <img src="assets/button_in_factory.png" alt="Convert Clay to Bricks">
+        </button>
+    </div>
+
+    <div class="tower-menu menu" id="tower-menu">
+        <img src="assets/back.png" alt="Back" class="back-icon" id="back-icon-tower">
+        <h2>Tower</h2>
+        <div class="factory-stats">
+            <div id="current-bricks-tower">Bricks: 0</div>
+            <div id="current-height">Height: 0 m</div>
+        </div>
+        <button class="factory-button" id="build-tower-button">
+            <img src="assets/build_tower.png" alt="Build the Tower">
+        </button>
     </div>
 
     <script src="main.js"></script>
