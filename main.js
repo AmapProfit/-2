@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const clayCountDisplay = document.getElementById('clay-count');
     const energyCountDisplay = document.getElementById('energy-count');
     const energyBar = document.getElementById('energy-bar');
+    const bricksCountDisplay = document.getElementById('bricks-count');
+    const heightCountDisplay = document.getElementById('height-count');
 
     const boostsIcon = document.getElementById('boosts-icon');
     const boostsMenu = document.getElementById('boosts-menu');
@@ -29,13 +31,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const energyBoostCostDisplay = document.getElementById('energy-boost-cost');
     const energyBoostLevelDisplay = document.getElementById('energy-boost-level');
 
-    let clayCount = 0;
+    const factoryIcon = document.getElementById('factory-icon');
+    const factoryMenu = document.getElementById('factory-menu');
+    const backIconFactory = document.getElementById('back-icon-factory');
+    const factoryButton = document.getElementById('factory-button');
+    const currentClayDisplay = document.getElementById('current-clay');
+    const currentBricksDisplay = document.getElementById('current-bricks');
+
+    const towerIcon = document.getElementById('tower-icon');
+    const towerMenu = document.getElementById('tower-menu');
+    const backIconTower = document.getElementById('back-icon-tower');
+    const buildTowerButton = document.getElementById('build-tower-button');
+    const currentBricksTowerDisplay = document.getElementById('current-bricks-tower');
+    const currentHeightDisplay = document.getElementById('current-height');
+
+    let clayCount = 10000000;
     let energy = 5000;
     const maxEnergy = 5000;
     let energyPerClick = 20;
     let energyRecoveryRate = 1;
     const energyRecoveryInterval = 1000; // 1 second
     let coinsPerClick = 1;
+    let bricksCount = 0;
+    let heightCount = 0;
 
     let fireBoostCount = 3;
     let energyBoostCount = 3;
@@ -111,6 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    setInterval(() => {
+        if (energy < maxEnergy && !isEnergyFree) {
+            energy = Math.min(energy + energyRecoveryRate, maxEnergy);
+            updateDisplays();
+        }
+    }, energyRecoveryInterval);
+
     boostButton.addEventListener('click', () => {
         if (currentLevel < boostCosts.length && clayCount >= boostCosts[currentLevel]) {
             clayCount -= boostCosts[currentLevel];
@@ -129,6 +154,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    factoryIcon.addEventListener('click', () => {
+        factoryMenu.classList.add('show');
+        updateFactoryDisplay();
+    });
+
+    backIconFactory.addEventListener('click', () => {
+        factoryMenu.classList.remove('show');
+    });
+
+    factoryButton.addEventListener('click', () => {
+        if (clayCount >= 25) {
+            const bricksToAdd = Math.floor(clayCount / 25);
+            bricksCount += bricksToAdd;
+            clayCount -= bricksToAdd * 25;
+            updateDisplays();
+            updateFactoryDisplay();
+        }
+    });
+
+    towerIcon.addEventListener('click', () => {
+        towerMenu.classList.add('show');
+        updateTowerDisplay();
+    });
+
+    backIconTower.addEventListener('click', () => {
+        towerMenu.classList.remove('show');
+    });
+
+    buildTowerButton.addEventListener('click', () => {
+        if (bricksCount >= 100) {
+            bricksCount -= 100;
+            heightCount += 1;
+            updateDisplays();
+            updateTowerDisplay();
+        }
+    });
+
     function updateDisplays() {
         clayCountDisplay.textContent = clayCount;
         energyCountDisplay.textContent = `${energy}/${maxEnergy}`;
@@ -139,15 +201,21 @@ document.addEventListener('DOMContentLoaded', () => {
         boostCostDisplay.textContent = boostCosts[currentLevel] || 'MAX';
         boostLevelDisplay.textContent = `Level ${currentLevel + 1}`;
         energyBoostCostDisplay.textContent = energyBoostCosts[energyBoostLevel] || 'MAX';
+        bricksCountDisplay.textContent = bricksCount;
+        heightCountDisplay.textContent = `${heightCount} m`;
         energyBoostLevelDisplay.textContent = `Level ${energyBoostLevel + 1}`;
+        updateFactoryDisplay();
     }
 
-    setInterval(() => {
-        if (energy < maxEnergy) {
-            energy = Math.min(energy + energyRecoveryRate, maxEnergy);
-            updateDisplays();
-        }
-    }, energyRecoveryInterval);
+    function updateFactoryDisplay() {
+        currentClayDisplay.textContent = `Clay: ${clayCount}`;
+        currentBricksDisplay.textContent = `Bricks: ${bricksCount}`;
+    }
+
+    function updateTowerDisplay() {
+        currentBricksTowerDisplay.textContent = `Bricks: ${bricksCount}`;
+        currentHeightDisplay.textContent = `Height: ${heightCount} m`;
+    }
 
     updateDisplays();
 });
