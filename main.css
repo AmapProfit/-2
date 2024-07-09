@@ -437,11 +437,12 @@ body {
     height: 100%;
 }
 
-/* Tower menu styles */
+/* Стили для меню башни */
 .tower-menu.show {
     display: flex;
 }
 
+/* Стили для меню башни */
 .tower-menu {
     display: none;
     position: fixed;
@@ -453,8 +454,10 @@ body {
     z-index: 9999;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Выравнивание элементов вверху */
     padding: 20px;
+    overflow-y: scroll; /* Разрешаем вертикальный скроллинг */
+    box-sizing: border-box; /* Учитываем padding в расчетах размеров */
 }
 
 .tower-menu .back-icon {
@@ -464,12 +467,14 @@ body {
     width: 40px;
     height: 40px;
     cursor: pointer;
+    z-index: 10; /* Убедитесь, что иконка назад поверх блоков башни */
 }
 
 .tower-menu h2 {
     color: #fff;
     text-align: center;
     margin: 10px 0;
+    z-index: 10; /* Убедитесь, что заголовок поверх блоков башни */
 }
 
 .tower-stats {
@@ -480,21 +485,34 @@ body {
     color: #fff;
     font-size: 24px;
     text-align: center;
+    z-index: 10; /* Убедитесь, что статистика поверх блоков башни */
 }
 
-.tower-button {
+/* Стили для контейнера блоков башни */
+.tower-block-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column-reverse; /* Чтобы новые блоки добавлялись сверху вниз */
     align-items: center;
-    width: 200px;
-    height: 100px;
-    background-color: #e8c177;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    flex-grow: 1; /* Позволяет контейнеру расти по высоте */
 }
 
-.tower-button img {
-    width: 100%;
-    height: 100%;
+/* Стили для блока башни */
+.tower-block {
+    width: 200px; /* Примерная ширина блока башни */
+    height: 50px; /* Примерная высота блока башни */
+    background-color: #f39c12; /* Цвет блока башни */
+    margin-bottom: 10px; /* Отступ между блоками */
+    opacity: 0; /* Изначально блок невидимый */
+    transition: opacity 1s ease; /* Анимация плавного появления */
+}
+
+/* Анимация для плавного появления блока башни */
+.tower-block.show {
+    opacity: 1;
+}
+
+#build-tower-button {
+    margin-top: 20px; /* Отступ от контейнера блоков */
 }
