@@ -224,6 +224,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (taskName === 'telegram') {
             window.open(link, '_blank');
             // Логика проверки подписки на Telegram и начисления награды
+        } else if (taskName === 'telegram-partners1') {
+            window.open(link, '_blank');
+            bricksCount += 1000;
+            updateDisplays();
         } else if (taskName === 'youtube') {
             window.open(link, '_blank');
             bricksCount += 1000;
@@ -236,6 +240,63 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open(link, '_blank');
             bricksCount += 1000;
             updateDisplays();
+        }
+    }
+    const completedTasks = {
+        telegram: false,
+        youtube: false,
+        twitter: false,
+        tiktok: false,
+        telegrampartners1: false,
+    };
+    
+    function completeTask(taskName, link) {
+        if (taskName === 'telegram') {
+            if (!completedTasks.telegram) {
+                window.open(link, '_blank');
+                // Логика проверки подписки на Telegram и начисления награды
+                bricksCount += 1000;
+                completedTasks.telegram = true; // Устанавливаем флаг выполнения задачи
+                updateDisplays();
+            } else {
+                alert('You have already completed this task.');
+            }
+        } else if (taskName === 'youtube') {
+            if (!completedTasks.youtube) {
+                window.open(link, '_blank');
+                bricksCount += 1000;
+                completedTasks.youtube = true; // Устанавливаем флаг выполнения задачи
+                updateDisplays();
+            } else {
+                alert('You have already completed this task.');
+            }
+        }   else if (taskName === 'telegrampartners1') {
+                if (!completedTasks.telegrampartners1) {
+                    window.open(link, '_blank');
+                    bricksCount += 1000;
+                    completedTasks.telegrampartners1 = true; // Устанавливаем флаг выполнения задачи
+                    updateDisplays();
+                } else {
+                    alert('You have already completed this task.');
+                }
+        } else if (taskName === 'twitter') {
+            if (!completedTasks.twitter) {
+                window.open(link, '_blank');
+                bricksCount += 1000;
+                completedTasks.twitter = true; // Устанавливаем флаг выполнения задачи
+                updateDisplays();
+            } else {
+                alert('You have already completed this task.');
+            }
+        } else if (taskName === 'tiktok') {
+            if (!completedTasks.tiktok) {
+                window.open(link, '_blank');
+                bricksCount += 1000;
+                completedTasks.tiktok = true; // Устанавливаем флаг выполнения задачи
+                updateDisplays();
+            } else {
+                alert('You have already completed this task.');
+            }
         }
     }
 
@@ -266,16 +327,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Функция для выдачи наград за достижение высоты
+    const completedLeaderTasks = {
+        height10: false,
+        height50: false,
+        height100: false,
+        height500: false,
+        height1000: false,
+    };
+    
+    // Функция для выплаты награды за выполнение задачи по достижению определенной высоты
     function claimHeightReward(requiredHeight, rewardBricks) {
-        if (heightCount >= requiredHeight) {
+        if (heightCount >= requiredHeight && !completedLeaderTasks[`height${requiredHeight}`]) {
             bricksCount += rewardBricks;
+            completedLeaderTasks[`height${requiredHeight}`] = true; // Устанавливаем флаг выполнения задачи
             updateDisplays();
         } else {
-            alert(`You need ${requiredHeight} height to claim this reward.`);
+            alert(`You either haven't reached the required height (${requiredHeight}) or have already claimed this reward.`);
         }
     }
-
-    // Добавление слушателей событий для кнопок в секции Leagues
+    
+    // Добавление слушателей событий для кнопок в секции Leaders
     document.querySelectorAll('.height-reward-button').forEach(function(button) {
         button.addEventListener('click', function() {
             const requiredHeight = parseInt(this.getAttribute('data-height'));
@@ -283,6 +354,17 @@ document.addEventListener('DOMContentLoaded', () => {
             claimHeightReward(requiredHeight, rewardBricks);
         });
     });
+    
+    // Добавление слушателей событий для кнопок в меню Leaders
+    document.querySelectorAll('#leaders-tasks .task-button').forEach(function(button) {
+        button.addEventListener('click', function() {
+        const requiredHeight = parseInt(this.getAttribute('data-height'));
+        const rewardBricks = parseInt(this.getAttribute('data-reward'));
+        claimHeightReward(requiredHeight, rewardBricks);
+        });
+});
+
+    
 
     updateDisplays();
 });
