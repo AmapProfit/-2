@@ -123,6 +123,32 @@
         </div>
     </div>
 
+    <div class="tasks-menu">
+        <div class="back-icon tasks-back-button"><img src="assets/back.png" alt="Back"></div>
+        <div class="submenu">
+            <button class="submenu-button active" data-section="general">General</button>
+            <button class="submenu-button" data-section="leaders">Leaders</button>
+            <button class="submenu-button" data-section="friends">Friends</button>
+            <button class="submenu-button" data-section="partners">Partners</button>
+        </div>
+        <div id="general-tasks" class="task-section">
+            <button class="task-button" data-task="telegram" data-link="https://t.me/example">Subscribe to Telegram</button>
+            <button class="task-button" data-task="twitter" data-link="https://twitter.com/example">Follow on Twitter</button>
+            <button class="task-button" data-task="youtube" data-link="https://youtube.com/example">Subscribe on YouTube</button>
+            <button class="task-button" data-task="tiktok" data-link="https://tiktok.com/@example">Follow on TikTok</button>
+        </div>
+        <div id="leaders-tasks" class="task-section" style="display:none;">
+            <p>Leader tasks will be here...</p>
+        </div>
+        <div id="friends-tasks" class="task-section" style="display:none;">
+            <p>Friends tasks will be here...</p>
+        </div>
+        <div id="partners-tasks" class="task-section" style="display:none;">
+            <p>Partners tasks will be here...</p>
+        </div>
+    </div>
+    
+
     <script src="main.js"></script>
 </body>
 </html>
