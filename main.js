@@ -30,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentBricksTowerDisplay = document.getElementById('current-bricks-tower');
     const currentHeightDisplay = document.getElementById('current-height');
     const towerBlockContainer = document.querySelector('.tower-block-container');
+    const tasksButton = document.querySelector('.tasks');
+    const tasksMenu = document.querySelector('.tasks-menu');
+    const tasksBackButton = document.querySelector('.tasks-menu .back-icon');
+    const submenuButtons = document.querySelectorAll('.submenu-button');
+    const taskSections = document.querySelectorAll('.task-section');
 
     let clayCount = 10000000;
     let energy = 5000;
@@ -152,6 +157,15 @@ document.addEventListener('DOMContentLoaded', () => {
         towerMenu.classList.remove('show');
     });
 
+    tasksButton.addEventListener('click', () => {
+        tasksMenu.style.display = 'flex';
+        showTaskSection('general');
+    });
+
+    tasksBackButton.addEventListener('click', () => {
+        tasksMenu.style.display = 'none';
+    });
+
     document.addEventListener('click', (event) => {
         if (towerMenu.classList.contains('show') && event.target === towerMenu) {
             if (bricksCount >= 100) {
@@ -160,18 +174,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateDisplays();
                 updateTowerDisplay();
 
-                // Создаем новый элемент блока башни
+                // Create a new tower block element
                 const towerBlock = document.createElement('div');
                 towerBlock.classList.add('tower-block');
-                towerBlock.textContent = `${heightCount} m`; // Пример текста в блоке, можно изменить
+                towerBlock.textContent = `${heightCount} m`;
 
-                // Вставляем новый блок перед кнопкой Build Tower
+                // Insert the new block before the Build Tower button
                 towerBlockContainer.appendChild(towerBlock);
 
-                // Прокручиваем контейнер вниз, чтобы новый блок был виден
+                // Scroll the container down to make the new block visible
                 towerBlockContainer.scrollTop = towerBlockContainer.scrollHeight;
 
-                // Задержка перед добавлением класса для анимации (опционально, для плавности)
+                // Delay before adding the 'show' class for animation (optional, for smoothness)
                 setTimeout(() => {
                     towerBlock.classList.add('show');
                 }, 100);
@@ -192,9 +206,8 @@ document.addEventListener('DOMContentLoaded', () => {
         energyBoostCostDisplay.textContent = `Energy Boost Cost: ${energyBoostCosts[energyBoostLevel] || 'N/A'}`;
         energyBoostLevelDisplay.textContent = `Energy Boost Level: ${energyBoostLevel + 1}`;
         currentClayDisplay.textContent = `Current Clay: ${clayCount}`;
-        currentBricksDisplay.textContent = `Current Bricks: ${bricksCount}`;
-        currentBricksTowerDisplay.textContent = `Bricks: ${bricksCount}`;
-        currentHeightDisplay.textContent = `Height: ${heightCount} m`;
+        currentBricksDisplay.textContent =         content = `Bricks: ${bricksCount}`;
+        currentHeightDisplay.textContent = `Height: ${heightCount}`;
     }
 
     function updateFactoryDisplay() {
@@ -205,11 +218,72 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateTowerDisplay() {
         currentBricksTowerDisplay.textContent = `Bricks: ${bricksCount}`;
         currentHeightDisplay.textContent = `Height: ${heightCount}`;
-    
-    
     }
-    
-     // Initialize the display on page load
+
+    function completeTask(taskName, link) {
+        if (taskName === 'telegram') {
+            window.open(link, '_blank');
+            // Логика проверки подписки на Telegram и начисления награды
+        } else if (taskName === 'youtube') {
+            window.open(link, '_blank');
+            bricksCount += 1000;
+            updateDisplays();
+        } else if (taskName === 'twitter') {
+            window.open(link, '_blank');
+            bricksCount += 1000;
+            updateDisplays();
+        } else if (taskName === 'tiktok') {
+            window.open(link, '_blank');
+            bricksCount += 1000;
+            updateDisplays();
+        }
+    }
+
+    function showTaskSection(section) {
+        taskSections.forEach(function(sectionEl) {
+            sectionEl.style.display = 'none';
+        });
+        document.getElementById(`${section}-tasks`).style.display = 'block';
+        submenuButtons.forEach(function(button) {
+            button.classList.remove('active');
+        });
+        document.querySelector(`.submenu-button[data-section="${section}"]`).classList.add('active');
+    }
+
+    submenuButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            const section = this.getAttribute('data-section');
+            showTaskSection(section);
+        });
+    });
+
+    document.querySelectorAll('.task-button').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const taskName = this.getAttribute('data-task');
+            const link = this.getAttribute('data-link');
+            completeTask(taskName, link);
+        });
+    });
+
+    // Функция для выдачи наград за достижение высоты
+    function claimHeightReward(requiredHeight, rewardBricks) {
+        if (heightCount >= requiredHeight) {
+            bricksCount += rewardBricks;
+            updateDisplays();
+        } else {
+            alert(`You need ${requiredHeight} height to claim this reward.`);
+        }
+    }
+
+    // Добавление слушателей событий для кнопок в секции Leagues
+    document.querySelectorAll('.height-reward-button').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const requiredHeight = parseInt(this.getAttribute('data-height'));
+            const rewardBricks = parseInt(this.getAttribute('data-reward'));
+            claimHeightReward(requiredHeight, rewardBricks);
+        });
+    });
+
     updateDisplays();
 });
-    
+
